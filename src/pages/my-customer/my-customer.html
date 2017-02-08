@@ -6,13 +6,23 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>myCustomer</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>我的患者</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let customer of customers">
+            <ion-avatar item-left>
+                <img [src]="customer.avatar">
+            </ion-avatar>
+            <h2>{{customer.name}}</h2>
+
+            <button ion-button color="secondary" (click)="goMessageDetail(customer)">发送消息</button>
+        </ion-item>
+    </ion-list>
 
 </ion-content>

@@ -6,13 +6,79 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>mytime</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>我的时间</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+    <button ion-button clear color="secondary">2017.2.20日-2017.2.26日 可以预约的时间</button>
+    <ion-grid>
+        <ion-row>
+            <ion-col></ion-col>
+            <ion-col>星期一</ion-col>
+            <ion-col>星期二</ion-col>
+            <ion-col>星期三</ion-col>
+            <ion-col>星期四</ion-col>
+            <ion-col>星期五</ion-col>
+            <ion-col>星期六</ion-col>
+            <ion-col>星期日</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>上午</ion-col>
+            <ion-col>
+                <ion-toggle checked="true"></ion-toggle>
+            </ion-col>
+            <ion-col>
+                <ion-toggle checked="true"></ion-toggle>
+            </ion-col>
+            <ion-col>
+                <ion-toggle checked="true"></ion-toggle>
+            </ion-col>
+            <ion-col>
+                <ion-toggle checked="false"></ion-toggle>
+            </ion-col>
+            <ion-col>
+                <ion-toggle checked="false"></ion-toggle>
+            </ion-col>
+            <ion-col>
+                <ion-toggle checked="false"></ion-toggle>
+            </ion-col>
+            <ion-col>
+                <ion-toggle checked="false"></ion-toggle>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>下午</ion-col>
+            <ion-col>
+                <ion-toggle checked="true"></ion-toggle>
+            </ion-col>
+            <ion-col>
+                <ion-toggle checked="false"></ion-toggle>
+            </ion-col>
+            <ion-col>
+                <ion-toggle checked="true"></ion-toggle>
+            </ion-col>
+            <ion-col>
+                <ion-toggle checked="false"></ion-toggle>
+            </ion-col>
+            <ion-col>
+                <ion-toggle checked="true"></ion-toggle>
+            </ion-col>
+            <ion-col>
+                <ion-toggle checked="false"></ion-toggle>
+            </ion-col>
+            <ion-col>
+                <ion-toggle checked="true"></ion-toggle>
+            </ion-col>
+        </ion-row>
+
+
+    </ion-grid>
+
+    <ion-textarea placeholder="留下时间备注" rows="8"></ion-textarea>
 
 </ion-content>

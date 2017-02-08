@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import { NavController, NavParams } from 'ionic-angular';
 import { TreatDetailPage } from '../treat-detail/treat-detail';
-
+import { MyCustomerPage } from '../my-customer/my-customer';
 /*
   Generated class for the State page.
 
@@ -44,6 +44,7 @@ export class StatePage {
 
   goTreatedDetail(treated) {
     this.navCtrl.push(TreatDetailPage, treated);
-
   }
+
+
 }

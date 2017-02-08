@@ -6,7 +6,7 @@
 
     <ion-grid style="    margin-top: 80px;">
         <ion-row class="projects">
-            <ion-col width-50 style="border-bottom: 1px solid lightgray;border-right: 1px solid lightgray;">
+            <ion-col width-50 style="border-bottom: 1px solid lightgray;border-right: 1px solid lightgray;" (click)="goMytime()">
                 <div class="icon time"></div>
                 <div class="title">我的时间</div>
             </ion-col>
@@ -16,7 +16,7 @@
             </ion-col>
         </ion-row>
         <ion-row class="projects">
-            <ion-col width-50 style="border-right: 1px solid lightgray;">
+            <ion-col width-50 style="border-right: 1px solid lightgray;" (click)="goMyCustomer()">
                 <div class="icon kehu"></div>
                 <div class="title">我的患者</div>
             </ion-col>

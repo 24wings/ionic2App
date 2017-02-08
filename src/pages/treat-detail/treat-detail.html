@@ -22,8 +22,8 @@
         </ion-item>
         <ion-item>
             <ion-label>美容项目</ion-label>
-            <ion-note item-right> <button ion-button color="primary" (click)="selectProject()">选择项目</button></ion-note>
-            <button *ngIf="data.selectedProject">{{data.selectedProject}}</button>
+            <ion-note item-right *ngIf="!data.selectedBeautyProject"> <button ion-button color="primary" (click)="selectProject()">选择项目</button></ion-note>
+            <ion-note item-right *ngIf="data.selectedBeautyProject"><button ion-button color="secondary">{{data.selectedBeautyProject}}</button></ion-note>
         </ion-item>
     </ion-list>
 
@@ -41,12 +41,18 @@
     </ion-grid>
 
     <ion-grid>
-        <ion-textarea placeholder="Enter a description" rows="10">
+        <ion-textarea placeholder="描述就诊的内容" rows="10">
 
         </ion-textarea>
     </ion-grid>
 
-    <button ion-button full color="primary">预约治疗</button>
+    <ion-list>
+        <ion-item>
+            <ion-label>预约治疗时间:</ion-label>
+            <ion-datetime displayFormat="YY年MM月DD日" pickerFormat="YYYY MM DD" [(ngModel)]="data.toCureDt"></ion-datetime>
+        </ion-item>
+    </ion-list>
+    <button ion-button full color="primary" (click)="toCure()">预约治疗</button>
 
     <!--隐藏的文件选择框-->
     <input type="file" #imageSelect hidden (change)="addImage(imageSelect)">

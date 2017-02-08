@@ -16,6 +16,7 @@ export class TreatDetailPage {
   data;
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
     this.data = this.navParams.data;
+    console.log(this.data);
   }
 
   ionViewDidLoad() {
@@ -44,4 +45,11 @@ export class TreatDetailPage {
     this.modalCtrl.create(BeautyProjectsPage, this.data).present();
   }
 
+  debug() {
+    console.log(this.data);
+  }
+
+  toCure() {
+    this.navCtrl.pop();
+  }
 }

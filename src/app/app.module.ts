@@ -17,6 +17,8 @@ import { AddCustomerPage } from '../pages/add-customer/add-customer';
 import { StatePage } from '../pages/state/state';
 import { TreatDetailPage } from '../pages/treat-detail/treat-detail';
 import { BeautyProjectsPage } from '../pages/beauty-projects/beauty-projects';
+import { MessageDetailPage } from '../pages/message-detail/message-detail';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { BeautyProjectsPage } from '../pages/beauty-projects/beauty-projects';
     AddCustomerPage,
     StatePage,
     TreatDetailPage,
-    BeautyProjectsPage
+    BeautyProjectsPage,
+    MessageDetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -60,7 +63,8 @@ import { BeautyProjectsPage } from '../pages/beauty-projects/beauty-projects';
     AddCustomerPage,
     StatePage,
     TreatDetailPage,
-    BeautyProjectsPage
+    BeautyProjectsPage,
+    MessageDetailPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, ToolService]
 })

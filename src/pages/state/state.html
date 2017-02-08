@@ -69,8 +69,13 @@
                 <ion-thumbnail item-left>
                     <img [src]="toCure.avatar">
                 </ion-thumbnail>
-                <h2>{{toCure.name}}</h2>
-                <button ion-button color="secondary" item-right>预约治疗</button>
+
+                <ion-label>
+                    <h2>{{toCure.name}}</h2>
+                    <h2>美容项目:拉皮</h2>
+                    <button ion-button small color="secondary" item-right>预约治疗</button>
+                </ion-label>
+                <ion-datetime displayFormat="YY年MM月DD日" doneText="完成" (ionChange)="orderTreat(toCure)" cancelText="取消" pickerFormat="YY MM DD" [(ngModel)]="toCure.date"></ion-datetime>
             </ion-item>
         </ion-list>
         <ion-list *ngSwitchCase="'cured'">
@@ -79,7 +84,7 @@
                     <img [src]="cured.avatar">
                 </ion-thumbnail>
                 <h2>{{cured.name}}</h2>
-                <button ion-button color="secondary" item-right>治疗记录</button>
+                <button ion-button color="secondary" item-right (click)="goTreatedDetail(cured)">治疗记录</button>
             </ion-item>
         </ion-list>
     </div>
