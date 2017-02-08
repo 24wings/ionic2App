@@ -1,0 +1,92 @@
+<!--
+  Generated template for the State page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+    <ion-navbar no-border-bottom>
+        <ion-title>
+            预约时间
+        </ion-title>
+    </ion-navbar>
+    <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="selectedState">
+            <ion-segment-button value="toTreat">
+                待就诊
+            </ion-segment-button>
+            <ion-segment-button value="treated">
+                已就诊
+            </ion-segment-button>
+            <ion-segment-button value="toCure">
+                待治疗
+            </ion-segment-button>
+            <ion-segment-button value="cured">
+                已治疗
+            </ion-segment-button>
+
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div [ngSwitch]="selectedState">
+        <ion-list *ngSwitchCase="'toTreat'">
+            <ion-item *ngFor="let toTreat of data.toTreats">
+                <ion-thumbnail item-left>
+                    <img [src]="toTreat.avatar">
+                </ion-thumbnail>
+
+                <ion-label>
+                    <h2>{{toTreat.name}}</h2>
+                    <h2>美容项目:拉皮</h2>
+
+                    <button ion-button small color="secondary" item-right>预约治疗</button>
+
+
+                </ion-label>
+                <ion-datetime displayFormat="YY年MM月DD日" doneText="完成" (ionChange)="orderTreat(toTreat)" cancelText="取消" pickerFormat="YY MM DD" [(ngModel)]="toTreat.date"></ion-datetime>
+
+            </ion-item>
+
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'treated'">
+            <ion-item *ngFor="let treated of data.treateds">
+                <ion-thumbnail item-left>
+                    <img [src]="treated.avatar">
+                </ion-thumbnail>
+                <h2>{{treated.name}}</h2>
+                <p>就诊时间:{{treated.date}}</p>
+                <button ion-button color="secondary" item-right (click)="goTreatedDetail(treated)">就诊记录</button>
+
+            </ion-item>
+
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'toCure'">
+            <ion-item *ngFor="let toCure of data.toCures">
+                <ion-thumbnail item-left>
+                    <img [src]="toCure.avatar">
+                </ion-thumbnail>
+                <h2>{{toCure.name}}</h2>
+                <button ion-button color="secondary" item-right>预约治疗</button>
+            </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'cured'">
+            <ion-item *ngFor="let cured of data.cureds">
+                <ion-thumbnail item-left>
+                    <img [src]="cured.avatar">
+                </ion-thumbnail>
+                <h2>{{cured.name}}</h2>
+                <button ion-button color="secondary" item-right>治疗记录</button>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
+
+
+<ion-item>
+
+
+</ion-item>

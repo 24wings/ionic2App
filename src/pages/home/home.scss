@@ -1,0 +1,38 @@
+page-home {
+    .projects {
+        ion-col {
+            position: relative;
+            padding-bottom: 40%;
+            text-align: center;
+        }
+        ion-col .icon {
+            letter-spacing: 2px;
+            width: 45px;
+            height: 45px;
+            display: block;
+            margin-left: calc(50% - 22.5px);
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            position: absolute;
+            top: 20px;
+        }
+        ion-col .time {
+            background: url(../assets/images/icon-time.png);
+        }
+        ion-col .rili {
+            background: url(../assets/images/icon-rili.png);
+        }
+        ion-col .kehu {
+            background: url(../assets/images/icon-kehu.png);
+        }
+        ion-col .add-user {
+            background: url(../assets/images/icon-adduser.png);
+        }
+        ion-col .title {
+            width: 100%;
+            position: absolute;
+            top: 70px;
+            text-align: center;
+        }
+    }
+}

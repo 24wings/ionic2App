@@ -1,0 +1,36 @@
+page-signin {
+    .logo {
+        margin-top: 27%;
+        width: 100%;
+        height: 150px;
+    }
+    ion-content {
+        background: url(../assets/images/login-bg.png);
+    }
+    .login-form {
+        width: 290px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .login-button {
+        background: -webkit-gradient(linear, left top, left bottom, from(#89ccff), to(#55b2fb));
+        margin-left: auto;
+        margin-right: auto;
+        width: 291px;
+        border-radius: 10px;
+    }
+    .login-link {
+        width: 291px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #fff;
+    }
+    .forgot-btn {
+        float: left;
+        color: #fff;
+    }
+    .signup-btn {
+        float: right;
+        color: #fff;
+    }
+}
