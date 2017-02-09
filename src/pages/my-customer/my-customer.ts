@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import { NavController, NavParams } from 'ionic-angular';
 import { MessageDetailPage } from '../message-detail/message-detail';
+import { ViewHistoryPage } from '../view-history/view-history';
 
 /*
   Generated class for the MyCustomer page.
@@ -28,6 +29,11 @@ export class MyCustomerPage {
 
   goMessageDetail(customer) {
     this.navCtrl.push(MessageDetailPage, customer);
+  }
+
+  goViewHistory(customer) {
+    this.navCtrl.push(ViewHistoryPage, customer);
+
   }
 
 

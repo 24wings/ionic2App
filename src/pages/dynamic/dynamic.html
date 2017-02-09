@@ -1,5 +1,5 @@
 <!--
-  Generated template for the AddCustomer page.
+  Generated template for the Dynamic page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,23 +7,21 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>添加患者</ion-title>
+        <ion-title>动态</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
-
-    <ion-card>
-        <img [src]="qrcode" />
+    <ion-card *ngFor="let dynamic of dynamics">
+        <img [src]="dynamic.banner" />
         <ion-card-content>
             <ion-card-title>
-                请患者扫描二维码,在微信公众平台关注你
+                {{dynamic.title}}
             </ion-card-title>
             <p>
-
+                {{dynamic.summary}}
             </p>
         </ion-card-content>
     </ion-card>

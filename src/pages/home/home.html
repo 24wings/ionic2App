@@ -1,6 +1,6 @@
 <ion-content padding>
     <div>
-        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTtz2uemEb7YMfqXFIfL6rQ8IXVnPZxDvqHN7lgBorPH29fCD3M1haaSpA" alt="">
+        <img [src]="avatar" alt="" (click)="actionAvatar(avatarFileInput)" style="width:200px;">
 
     </div>
 
@@ -20,7 +20,7 @@
                 <div class="icon kehu"></div>
                 <div class="title">我的患者</div>
             </ion-col>
-            <ion-col width-50>
+            <ion-col width-50 (click)="goAddCustomer()">
                 <div class="icon add-user"></div>
                 <div class="title">添加患者</div>
             </ion-col>
@@ -28,4 +28,6 @@
 
     </ion-grid>
 
+
+    <input type="file" (change)="changeAvatar(avatarFileInput)" #avatarFileInput>
 </ion-content>

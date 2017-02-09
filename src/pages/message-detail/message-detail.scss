@@ -1,3 +1,25 @@
 page-message-detail {
-
+    .avatar {
+        width: 50px;
+    }
+    ion-note {
+        font-size: 12px;
+        align-self: flex-start;
+        margin-top: 14px;
+    }
+    .message {
+        h2 {
+            margin-top: 0.3em !important;
+        }
+    }
+    .msgInput:focus {
+        border: 1px solid #387ef5;
+    }
+    .msgInput {
+        float: left;
+        margin-top: 5px;
+        margin-right: 5%;
+        width: 75%;
+        display: inline-block;
+    }
 }

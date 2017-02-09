@@ -1,14 +1,12 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SigninPage } from '../pages/signin/signin';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { SignupPage } from '../pages/signup/signup';
-import { IndexPage } from '../pages/index/index';
+
 import { MessagePage } from '../pages/message/message';
 import { ToolService } from '../providers/tool-service';
 import { MytimePage } from '../pages/mytime/mytime';
@@ -18,19 +16,19 @@ import { StatePage } from '../pages/state/state';
 import { TreatDetailPage } from '../pages/treat-detail/treat-detail';
 import { BeautyProjectsPage } from '../pages/beauty-projects/beauty-projects';
 import { MessageDetailPage } from '../pages/message-detail/message-detail';
-
+import { ViewHistoryPage } from '../pages/view-history/view-history';
+import { DynamicPage } from '../pages/dynamic/dynamic';
+import { MorePage } from '../pages/more/more';
 
 @NgModule({
   declarations: [
     SigninPage,
     MyApp,
-    AboutPage,
-    ContactPage,
+
     HomePage,
     TabsPage,
     ForgotPasswordPage,
     SignupPage,
-    IndexPage,
     MessagePage,
     MytimePage,
     MyCustomerPage,
@@ -38,7 +36,10 @@ import { MessageDetailPage } from '../pages/message-detail/message-detail';
     StatePage,
     TreatDetailPage,
     BeautyProjectsPage,
-    MessageDetailPage
+    MessageDetailPage,
+    ViewHistoryPage,
+    DynamicPage,
+    MorePage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -50,13 +51,10 @@ import { MessageDetailPage } from '../pages/message-detail/message-detail';
   entryComponents: [
     SigninPage,
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     ForgotPasswordPage,
     SignupPage,
-    IndexPage,
     MessagePage,
     MytimePage,
     MyCustomerPage,
@@ -64,7 +62,10 @@ import { MessageDetailPage } from '../pages/message-detail/message-detail';
     StatePage,
     TreatDetailPage,
     BeautyProjectsPage,
-    MessageDetailPage
+    MessageDetailPage,
+    ViewHistoryPage,
+    DynamicPage,
+    MorePage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, ToolService]
 })

@@ -1,5 +1,5 @@
 <!--
-  Generated template for the MessageDetail page.
+  Generated template for the MyCustomer page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
@@ -14,15 +14,45 @@
 
 
 <ion-content padding>
-    <img [src]="customer.avatar" alt="">
 
-    <ion-input></ion-input>
+    <ion-list>
+        <ion-item class="message">
+            <ion-avatar item-left>
+                <img [src]="customer.avatar" alt="">
+            </ion-avatar>
+            <h2>{{customer.name}}</h2>
+            <p>我们可以开始聊天了</p>
+            <ion-note item-right>9:47 </ion-note>
+
+
+        </ion-item>
+        <ion-item class="message" *ngFor="let message of customer.messages">
+            <h2 style="float:right" item-right>我:</h2>
+
+            <ion-avatar item-right *ngIf="message.sender=='me'">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTtz2uemEb7YMfqXFIfL6rQ8IXVnPZxDvqHN7lgBorPH29fCD3M1haaSpA" alt="">
+            </ion-avatar>
+
+            <p *ngIf="message.type=='text'">{{message.content}}</p>
+            <img *ngIf="message.type=='image'" [src]="message.content" alt="">
+
+        </ion-item>
+    </ion-list>
 
 </ion-content>
 
 
+<!--隐藏的文件选择框-->
+<input type="file" #imageFileInput hidden (change)="sendImage(imageFileInput)">
 <ion-footer>
-    <ion-toolbar>
-        <ion-searchbar placeholder="输入消息" cancelButtonText="发送" [showCancelButton]="isTyping" color="secondary"><button type="">你好</button></ion-searchbar>
-    </ion-toolbar>
+    <ion-list>
+        <ion-item>
+
+            <input type="text" [(ngModel)]="typingMessage" class="msgInput">
+            <button ion-button color="secondary" style="float:left" *ngIf="typingMessage" (click)="sendMessage()">发送消息</button>
+            <button ion-btton clear icon-only *ngIf="!typingMessage" style="background: transparent;" (click)="imageFileInput.click()">
+                 <ion-icon name="add-circle" style="    padding-top: 10px;"> </ion-icon>
+            </button>
+        </ion-item>
+    </ion-list>
 </ion-footer>

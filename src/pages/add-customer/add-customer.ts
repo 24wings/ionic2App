@@ -12,8 +12,9 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add-customer.html'
 })
 export class AddCustomerPage {
+  qrcode = "../assets/images/qrcode.jpg";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddCustomerPage');

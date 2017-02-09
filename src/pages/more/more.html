@@ -1,0 +1,33 @@
+<!--
+  Generated template for the More page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>设置</ion-title>
+    </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item (click)="changeName()">
+            <ion-icon name="contact" item-left></ion-icon>
+            姓名:{{customer.username}}
+        </ion-item>
+        <ion-item (click)="addTag()">
+            <ion-icon name="pricetags" item-left></ion-icon>
+            擅长的项目:
+            <button ion-button icon-right color="secondary" *ngFor="let tag of customer.tags">
+         {{tag}}
+            <ion-icon name="backspace"></ion-icon>  
+              </button>
+            <button ion-button icon-only>
+              <ion-icon name="md-add"></ion-icon>
+            </button>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
