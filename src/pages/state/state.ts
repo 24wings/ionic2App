@@ -23,7 +23,7 @@ export class StatePage {
     cureds: []
   };
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-    this.http.get('assets/data/state.json').subscribe(rtn => {
+    this.http.get('./assets/data/state.json').subscribe(rtn => {
       this.data = rtn.json();
 
 

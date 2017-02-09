@@ -17,7 +17,7 @@ import { ViewHistoryPage } from '../view-history/view-history';
 export class MyCustomerPage {
   customers = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-    this.http.get('assets/data/my-customer.json').subscribe(rtn => {
+    this.http.get('./assets/data/my-customer.json').subscribe(rtn => {
       this.customers = rtn.json().customers;
     })
 
