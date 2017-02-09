@@ -17,17 +17,39 @@
             <ion-icon name="contact" item-left></ion-icon>
             姓名:{{customer.username}}
         </ion-item>
-        <ion-item (click)="addTag()">
+
+        <!--修改头像-->
+        <ion-item>
+            <ion-avatar item-left>
+                <img [src]="customer.avatar" alt="修改头像">
+            </ion-avatar>
+            <h2><button (click)="showAvatarAction(avatarFileInput)" ion-button color="primary">修改头像</button></h2>
+        </ion-item>
+        <!--工作起始时间-->
+        <ion-item>
+            <ion-label>工作的年限:</ion-label>
+            <ion-input [(ngModel)]="customer.workYears"></ion-input>
+        </ion-item>
+        <!--出生日期-->
+        <ion-item>
+            <ion-label>出生时间:</ion-label>
+            <ion-datetime [(ngModel)]="customer.birthDt" pickerFormat="YY年MM月DD日" displayFormat="YY年MM月DD日" cancelText="取消" doneText="确定"></ion-datetime>
+        </ion-item>
+
+
+        <ion-item>
             <ion-icon name="pricetags" item-left></ion-icon>
             擅长的项目:
-            <button ion-button icon-right color="secondary" *ngFor="let tag of customer.tags">
+            <button ion-button color="secondary" *ngFor="let tag of customer.tags;let i= index;">
          {{tag}}
-            <ion-icon name="backspace"></ion-icon>  
+            <ion-icon name="backspace" (click)="deleteTag(tag)"></ion-icon>  
               </button>
-            <button ion-button icon-only>
-              <ion-icon name="md-add"></ion-icon>
+            <button ion-button icon-only (click)="addTag()" *ngIf="customer.tags.length<=4" class="addTagBtn">
+              <ion-icon name="md-add" ></ion-icon>
             </button>
         </ion-item>
     </ion-list>
+
+    <input type="file" #avatarFileInput (change)="changeAvatar(avatarFileInput)" hidden>
 
 </ion-content>
