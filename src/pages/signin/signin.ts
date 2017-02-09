@@ -18,7 +18,7 @@ export class SigninPage {
   user = { username: "13212780816", password: "" };
   phoneReg = /^1[3-9]\d{9}/;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
-    this.login();
+
   }
 
   ionViewDidLoad() {
